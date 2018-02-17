@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends</title>
+</head>
+<body>
+	<h2> Hello, {{user.username}}!</h2>
+	<h3>Here is a list of your friends:</h3>
+	<fieldset>
+		<table>
+			<thead>
+				<tr>
+					<th>Alias</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					<td>{{friends.username}}
+					<td><a href="/user/{{friend.user.id}}">View Profile</a> <a href="/delete">
+					Remove as Friend</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</fieldset>
+	<h3>Other users not on your friends list:</h3>
+	<fieldset>
+		<table>
+			<thead>
+				<tr>
+					<th>Alias</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for admins in admin %}
+				<tr>
+					<td>{{admins.name}}
+					<td><a href="/user/{{friend.id}}>View Profile</a>
+					<a href="/user/{{friends.id}}/add">Add as Friend</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</fieldset>
+	<a href="/logout">Logout</a>
+</body>
+</html>
